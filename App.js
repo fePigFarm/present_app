@@ -9,13 +9,30 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+// 导航器 主题
 import {TeaNavigator, Theme} from 'teaset';
+// 引入全局样式
+import styleUtil from "./app/common/styleUtil";
+
+// 主题设置
+Theme.set({
+	fitIPhoneX: true, // 适配iPhoneX
+	tvBarBtnIconActiveTintColor: styleUtil.themeColor, // TabView
+	tvBarBtnActiveTitleColor: styleUtil.themeColor, // TabView
+	navColor: 'white',
+	backgroundColor: 'white',
+	navTintColor: 'black',
+	navTitleColor: 'black',
+	navSeparatorLineWidth: styleUtil.borderSeparator,
+	navSeparatorColor: styleUtil.borderColor,
+	navType: 'auto', //'auto', 'ios', 'android'
+	navStatusBarStyle: 'dark-content', //'default', 'light-content', 'dark-content'
+});
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
+    '双击R刷新',
 });
 
 type Props = {};
